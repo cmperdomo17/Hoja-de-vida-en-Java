@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.text.Normalizer.Form;
 import java.util.Arrays;
 import java.util.Date;
 import java.io.BufferedReader;
@@ -127,6 +126,15 @@ public class Main {
             } catch (ParseException e) {
                 System.out.println("Formato de fecha inválido. Por favor, use el formato dd/MM/yyyy.");
             }
+
+            // Experiencia Ocupacion
+            ExperienciaOcupacion.TipoOcupacion tipoOcupacion = ExperienciaOcupacion.TipoOcupacion.valueOf(reader.readLine());
+            int meses = Integer.parseInt(reader.readLine());
+            int anios = Integer.parseInt(reader.readLine());
+            ExperienciaOcupacion experienciaOcupacion = new ExperienciaOcupacion(tipoOcupacion, meses, anios);
+
+            // Experiencia Laboral
+            
  
             Nacimiento informacionNacimiento = new Nacimiento(paisNacimiento, departamentoNacimiento, municipioNacimiento, fechaNacimiento);
             Correspondencia informacionCorrespondencia = new Correspondencia(paisCorrespondencia, departamentoCorrespondencia, municipioCorrespondencia, direccionCorrespondencia, email, telefonoCorrespondencia);

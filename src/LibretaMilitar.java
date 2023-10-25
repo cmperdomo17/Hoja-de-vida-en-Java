@@ -7,9 +7,6 @@ public class LibretaMilitar {
     private float numeroLibreta;
     private int DM;
 
-    public LibretaMilitar() {
-    }
-
     public LibretaMilitar(TipoLibreta tipoLibreta, float numeroLibreta, int DM) {
         this.tipoLibreta = tipoLibreta;
         this.numeroLibreta = numeroLibreta;

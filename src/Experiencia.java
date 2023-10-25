@@ -1,3 +1,3 @@
-public class Experiencia {
-    
+public interface Experiencia {
+    int calcularExperiencia();
 }

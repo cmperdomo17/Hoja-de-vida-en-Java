@@ -28,8 +28,6 @@ public class Persona {
     private Nacimiento informacionNacimiento;
     private Correspondencia informacionCorrespondencia;
 
-    public Persona() {
-    }
     public Persona(float id, TipoID tipoID, Nacionalidad nacionalidad, Genero sexo, String nombre, String apellido, String direccion, String telefono, String correo, Nacimiento informacionNacimiento, Correspondencia informacionCorrespondencia) {
         this.id = id;
         this.tipoID = tipoID;

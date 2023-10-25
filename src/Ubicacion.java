@@ -1,11 +1,10 @@
+import java.util.Date;
+
 public abstract class Ubicacion {
 
     private String pais;
     private String departamento;
     private String municipio;
-
-    public Ubicacion() {
-    }
 
     public Ubicacion(String pais, String departamento, String municipio) {
         this.pais = pais;
@@ -29,22 +28,42 @@ public abstract class Ubicacion {
 
 class Nacimiento extends Ubicacion {
 
-    public Nacimiento() {
+    private Date fecha;
+
+    public Nacimiento(String pais, String departamento, String municipio, Date fecha) {
+        super(pais, departamento, municipio);
+        this.fecha = fecha;
     }
 
-    public Nacimiento(String pais, String departamento, String municipio) {
-        super(pais, departamento, municipio);
-    }
+    public Date getFecha() { return fecha; }
+
+    public void setFecha(Date fecha) { this.fecha = fecha; }
 
 }
 
 class Correspondencia extends Ubicacion {
 
-    public Correspondencia() {
+    private String direccion;
+    private String email;
+    private String telefono;
+
+    public Correspondencia(String pais, String departamento, String municipio, String direccion, String email, String telefono) {
+        super(pais, departamento, municipio);
+        this.direccion = direccion;
+        this.email = email;
+        this.telefono = telefono;
     }
 
-    public Correspondencia(String pais, String departamento, String municipio) {
-        super(pais, departamento, municipio);
-    }
+    public String getDireccion() { return direccion; }
+
+    public String getEmail() { return email; }
+
+    public String getTelefono() { return telefono; }
+
+    public void setDireccion(String direccion) { this.direccion = direccion; }
+
+    public void setEmail(String email) { this.email = email; }
+
+    public void setTelefono(String telefono) { this.telefono = telefono; }
 
 }

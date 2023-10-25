@@ -1,6 +1,3 @@
-// ! Nota: Revisar la validación de los setters
-// TODO: Implementar la validación de los setters
-// TODO: Implementar los métodos
 
 public class Persona {
 
@@ -27,8 +24,13 @@ public class Persona {
     private String correo;
     private Nacimiento informacionNacimiento;
     private Correspondencia informacionCorrespondencia;
+    private LibretaMilitar informacionMilitar;
+    private FormacionAcademica formacionAcademica;
+    private ExperienciaLaboral experienciaLaboral;
+    private ExperienciaOcupacion experienciaOcupacion;
+    private Empleo empleo;
 
-    public Persona(float id, TipoID tipoID, Nacionalidad nacionalidad, Genero sexo, String nombre, String apellido, String direccion, String telefono, String correo, Nacimiento informacionNacimiento, Correspondencia informacionCorrespondencia) {
+    public Persona(float id, TipoID tipoID, Nacionalidad nacionalidad, Genero sexo, String nombre, String apellido, String direccion, String telefono, String correo, Nacimiento informacionNacimiento, Correspondencia informacionCorrespondencia, LibretaMilitar informacionMilitar, FormacionAcademica formacionAcademica, ExperienciaLaboral experienciaLaboral, ExperienciaOcupacion experienciaOcupacion, Empleo empleo) {
         this.id = id;
         this.tipoID = tipoID;
         this.nacionalidad = nacionalidad;
@@ -40,6 +42,11 @@ public class Persona {
         this.correo = correo;
         this.informacionNacimiento = informacionNacimiento;
         this.informacionCorrespondencia = informacionCorrespondencia;
+        this.informacionMilitar = informacionMilitar;
+        this.formacionAcademica = formacionAcademica;
+        this.experienciaLaboral = experienciaLaboral;
+        this.experienciaOcupacion = experienciaOcupacion;
+        this.empleo = empleo;
     }
 
     public float getID() { return id; }
@@ -63,6 +70,16 @@ public class Persona {
     public Nacimiento getInformacionNacimiento() { return informacionNacimiento; }
 
     public Correspondencia getInformacionCorrespondencia() { return informacionCorrespondencia; }
+
+    public LibretaMilitar getInformacionMilitar() { return informacionMilitar; }
+
+    public FormacionAcademica getFormacionAcademica() { return formacionAcademica; }
+
+    public ExperienciaLaboral getExperienciaLaboral() { return experienciaLaboral; }
+
+    public ExperienciaOcupacion getExperienciaOcupacion() { return experienciaOcupacion; }
+
+    public Empleo getEmpleo() { return empleo; }
 
     public void setTipoID(String tipoID) {
         try {
@@ -132,6 +149,47 @@ public class Persona {
         this.informacionCorrespondencia = informacionCorrespondencia;
     }
 
+    public void setInformacionMilitar(LibretaMilitar informacionMilitar) {
+        this.informacionMilitar = informacionMilitar;
+    }
+
+    public void setFormacionAcademica(FormacionAcademica formacionAcademica) {
+        this.formacionAcademica = formacionAcademica;
+    }
+
+    public void setExperienciaLaboral(ExperienciaLaboral experienciaLaboral) {
+        this.experienciaLaboral = experienciaLaboral;
+    }
+
+    public void setExperienciaOcupacion(ExperienciaOcupacion experienciaOcupacion) {
+        this.experienciaOcupacion = experienciaOcupacion;
+    }
+
+    public void setEmpleo(Empleo empleo) {
+        this.empleo = empleo;
+    }
+
     // Methods
 
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", tipoID=" + tipoID +
+                ", nacionalidad=" + nacionalidad +
+                ", sexo=" + sexo +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", correo='" + correo + '\'' +
+                ", informacionNacimiento=" + informacionNacimiento +
+                ", informacionCorrespondencia=" + informacionCorrespondencia +
+                ", informacionMilitar=" + informacionMilitar +
+                ", formacionAcademica=" + formacionAcademica +
+                ", experienciaLaboral=" + experienciaLaboral +
+                ", experienciaOcupacion=" + experienciaOcupacion +
+                ", empleo=" + empleo +
+                '}';
+    }
 }

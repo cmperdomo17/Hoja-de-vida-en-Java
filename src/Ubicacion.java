@@ -24,6 +24,14 @@ public abstract class Ubicacion {
 
     public void setMunicipio(String municipio) { this.municipio = municipio; }
 
+    @Override
+    public String toString() {
+        return "Ubicacion{" +
+                "pais='" + pais + '\'' +
+                ", departamento='" + departamento + '\'' +
+                ", municipio='" + municipio + '\'' +
+                '}';
+    }
 }
 
 class Nacimiento extends Ubicacion {
@@ -39,6 +47,12 @@ class Nacimiento extends Ubicacion {
 
     public void setFecha(Date fecha) { this.fecha = fecha; }
 
+    @Override
+    public String toString() {
+        return "Nacimiento{" +
+                "fecha=" + fecha +
+                '}';
+    }
 }
 
 class Correspondencia extends Ubicacion {
@@ -66,4 +80,12 @@ class Correspondencia extends Ubicacion {
 
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
+    @Override
+    public String toString() {
+        return "Correspondencia{" +
+                "direccion='" + direccion + '\'' +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
 }

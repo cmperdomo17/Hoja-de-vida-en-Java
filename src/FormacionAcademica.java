@@ -25,6 +25,10 @@ public class FormacionAcademica {
 
     public void setFormacionIdiomas(List<Idioma> formacionIdiomas) { this.formacionIdiomas = formacionIdiomas; }
     
+    @Override
+    public String toString() {
+        return "FormacionAcademica{" + "formacionBasicaYMedia=" + formacionBasicaYMedia + ", formacionSuperior=" + formacionSuperior + ", formacionIdiomas=" + formacionIdiomas + '}';
+    }
 }
 
 class EducacionSuperior {
@@ -72,6 +76,10 @@ class EducacionSuperior {
 
     public void setNumTarjetaProfesional(int numTarjetaProfesional) { this.numTarjetaProfesional = numTarjetaProfesional; }
 
+    @Override
+    public String toString() {
+        return "EducacionSuperior{" + "modalidadAcademica=" + modalidadAcademica + ", nSemestresAprobados=" + nSemestresAprobados + ", graduado=" + graduado + ", titulo=" + titulo + ", mesyanioFin=" + mesyanioFin + ", numTarjetaProfesional=" + numTarjetaProfesional + '}';
+    }
 }
 
 class Idioma {
@@ -99,28 +107,36 @@ class Idioma {
 
     public void setLee(NivelIdioma lee) { this.lee = lee; }
 
+    @Override
+    public String toString() {
+        return "Idioma{" + "habla=" + habla + ", lee=" + lee + ", escribe=" + escribe + '}';
+    }
 }
 class EducacionBasicayMedia {
-    private List <Integer> institucion; 
+    private List <Integer> gradosCursados; 
     private String titulo;
     private Date fechaGrado;
 
-    public EducacionBasicayMedia(List<Integer> institucion, String titulo, Date fechaGrado) {
-        this.institucion = institucion;
+    public EducacionBasicayMedia(List<Integer> gradosCursados, String titulo, Date fechaGrado) {
+        this.gradosCursados = gradosCursados;
         this.titulo = titulo;
         this.fechaGrado = fechaGrado;
     }
 
-    public List<Integer> getInstitucion() { return institucion; }
+    public List<Integer> getgradosCursados() { return gradosCursados; }
 
     public String getTitulo() { return titulo; }
 
     public Date getFechaGrado() { return fechaGrado; }
 
-    public void setInstitucion(List<Integer> institucion) { this.institucion = institucion; }
+    public void setgradosCursados(List<Integer> gradosCursados) { this.gradosCursados = gradosCursados; }
 
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
     public void setFechaGrado(Date fechaGrado) { this.fechaGrado = fechaGrado; }
 
+    @Override
+    public String toString() {
+        return "EducacionBasicayMedia{" + "gradosCursados=" + gradosCursados + ", titulo=" + titulo + ", fechaGrado=" + fechaGrado + '}';
+    }
 }

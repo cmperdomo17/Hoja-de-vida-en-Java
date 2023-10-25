@@ -1,0 +1,43 @@
+123456
+CC
+COLOMBIANO
+MASCULINO
+Juan
+Pérez
+Calle 123 #45-67
+3001234567
+juan.perez@email.com
+Colombia
+Bogotá
+Chapinero
+20/05/1990
+Colombia
+Bogotá
+Chapinero
+Calle 123 #45-67
+juan.correspondencia@email.com
+3012345678
+PRIMERA
+777
+216
+1001
+Bachiller Académico
+15/12/2008
+TC
+8
+true
+Ingeniería de Sistemas
+15/06/2015
+123456
+MB
+R
+B
+Tecnologías Innovadoras SA
+PRIVADA
+contacto@tecnologiasinnovadoras.com
+(57)301-234-5678
+Calle Ficticia 123, Bogotá
+Ingeniero de Software
+Desarrollo de Software
+01/01/2015
+01/01/2020

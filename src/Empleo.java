@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.time.Period;
 
 public class Empleo {
@@ -14,10 +16,10 @@ public class Empleo {
     private String direccion;
     private String cargoActual;
     private String dependencia;
-    private LocalDate fechaIngreso;
-    private LocalDate fechaRetiro;
+    private Date fechaIngreso;
+    private Date fechaRetiro;
 
-    public Empleo(String nombreEmpresa, TipoEmpresa tipoEmpresa, String email, String telefono, String direccion, String cargoActual, String dependencia, int anioIngreso, int mesIngreso, Integer anioRetiro, Integer mesRetiro) {
+    public Empleo(String nombreEmpresa, TipoEmpresa tipoEmpresa, String email, String telefono, String direccion, String cargoActual, String dependencia, Date fechaIngreso, Date fechaRetiro) {
         this.nombreEmpresa = nombreEmpresa;
         this.tipoEmpresa = tipoEmpresa;
         this.email = email;
@@ -25,11 +27,8 @@ public class Empleo {
         this.direccion = direccion;
         this.cargoActual = cargoActual;
         this.dependencia = dependencia;
-        this.fechaIngreso = LocalDate.of(anioIngreso, mesIngreso, 1);
-        
-        if(anioRetiro != null && mesRetiro != null) {
-            this.fechaRetiro = LocalDate.of(anioRetiro, mesRetiro, 1);
-        }
+        this.fechaIngreso = fechaIngreso;
+        this.fechaRetiro = fechaRetiro;
     }
 
     public String getNombreEmpresa() { return nombreEmpresa; }
@@ -46,9 +45,9 @@ public class Empleo {
 
     public String getDependencia() { return dependencia; }
 
-    public LocalDate getFechaIngreso() { return fechaIngreso; }
+    public Date getFechaIngreso() { return fechaIngreso; }
 
-    public LocalDate getFechaRetiro() { return fechaRetiro; }
+    public Date getFechaRetiro() { return fechaRetiro; }
 
     public void setNombreEmpresa(String nombreEmpresa) { this.nombreEmpresa = nombreEmpresa; }
 
@@ -64,18 +63,38 @@ public class Empleo {
 
     public void setDependencia(String dependencia) { this.dependencia = dependencia; }
 
-    public void setFechaIngreso(int anio, int mes) {
-        this.fechaIngreso = LocalDate.of(anio, mes, 1);
-    }
+    public void setFechaIngreso(Date fechaIngreso) { this.fechaIngreso = fechaIngreso; }
 
-    public void setFechaRetiro(int anio, int mes) {
-        this.fechaRetiro = LocalDate.of(anio, mes, 1);
-    }
+    public void setFechaRetiro(Date fechaRetiro) { this.fechaRetiro = fechaRetiro; }
     
     public int calcularExperiencia() {
-        LocalDate fin = (fechaRetiro != null) ? fechaRetiro : LocalDate.now();
-        Period periodo = Period.between(fechaIngreso, fin);
-    
-        return periodo.getYears() * 12 + periodo.getMonths();
+        Calendar startCalendar = Calendar.getInstance();
+        startCalendar.setTime(fechaIngreso);
+
+        Calendar endCalendar = Calendar.getInstance();
+
+        if (fechaRetiro != null) {
+            endCalendar.setTime(fechaRetiro);
+        } 
+
+        int diffYear = endCalendar.get(Calendar.YEAR) - startCalendar.get(Calendar.YEAR);
+        int diffMonth = diffYear * 12 + endCalendar.get(Calendar.MONTH) - startCalendar.get(Calendar.MONTH);
+
+        return diffMonth;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleo{" +
+                "nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", tipoEmpresa=" + tipoEmpresa +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", cargoActual='" + cargoActual + '\'' +
+                ", dependencia='" + dependencia + '\'' +
+                ", fechaIngreso=" + fechaIngreso +
+                ", fechaRetiro=" + fechaRetiro +
+                '}';
     }
 }

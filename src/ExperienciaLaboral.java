@@ -44,4 +44,14 @@ public class ExperienciaLaboral implements Experiencia{
     
         return mesesTotales;
     }
+
+    @Override
+    public String toString() {
+        return "ExperienciaLaboral{" +
+                "empleoActual=" + empleoActual +
+                ", empleoAnterior=" + empleoAnterior +
+                ", experienciaOcupacion=" + experienciaOcupacion +
+                ", totalTiempoExperiencia='" + totalTiempoExperiencia + '\'' +
+                '}';
+    }
 }

@@ -4,10 +4,10 @@ public class LibretaMilitar {
     }
 
     private TipoLibreta tipoLibreta;
-    private float numeroLibreta;
+    private int numeroLibreta;
     private int DM;
 
-    public LibretaMilitar(TipoLibreta tipoLibreta, float numeroLibreta, int DM) {
+    public LibretaMilitar(TipoLibreta tipoLibreta, int numeroLibreta, int DM) {
         this.tipoLibreta = tipoLibreta;
         this.numeroLibreta = numeroLibreta;
         this.DM = DM;
@@ -15,7 +15,7 @@ public class LibretaMilitar {
 
     public TipoLibreta getTipoLibreta() { return tipoLibreta; }
 
-    public float getNumeroLibreta() { return numeroLibreta; }
+    public int getNumeroLibreta() { return numeroLibreta; }
 
     public int getDM() { return DM; }
 
@@ -27,8 +27,17 @@ public class LibretaMilitar {
         }
     }
 
-    public void setNumeroLibreta(float numeroLibreta) { this.numeroLibreta = numeroLibreta; }
+    public void setNumeroLibreta(int numeroLibreta) { this.numeroLibreta = numeroLibreta; }
 
     public void setDM(int DM) { this.DM = DM; }
+
+    @Override
+    public String toString() {
+        return "LibretaMilitar{" +
+                "tipoLibreta=" + tipoLibreta +
+                ", numeroLibreta=" + numeroLibreta +
+                ", DM=" + DM +
+                '}';
+    }
 
 }

@@ -49,4 +49,13 @@ public class ExperienciaOcupacion implements Experiencia{
         int mesesTotales = (anios * 12) + meses;
         return mesesTotales;
     }
+
+    @Override
+    public String toString() {
+        return "ExperienciaOcupacion{" +
+                "tipoOcupacion=" + tipoOcupacion +
+                ", meses=" + meses +
+                ", anios=" + anios +
+                '}';
+    }
 }

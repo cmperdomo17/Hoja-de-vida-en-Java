@@ -23,7 +23,29 @@ public class ExperienciaLaboral implements Experiencia{
 
     public void setEmpleoActual(Empleo empleoActual) { this.empleoActual = empleoActual; }
 
-    public void setEmpleoAnterior(List<Empleo> empleoAnterior) { this.empleoAnterior = empleoAnterior; }
+    public int encontrarIndiceDeCargoActual(List<Empleo> empleos, String cargoActual) {
+        for (int i = 0; i < empleos.size(); i++) {
+            if (empleos.get(i).getCargoActual().equals(cargoActual)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public void setEmpleoAnterior(List<Empleo> todosLosEmpleos, String cargoActual) {
+        int indiceActual = encontrarIndiceDeCargoActual(todosLosEmpleos, cargoActual);
+    
+        if (indiceActual == -1 || indiceActual == 0) {
+            System.out.println("Cargo actual no encontrado o no tiene empleos anteriores");
+            return;
+        }
+    
+        for (int i = 0; i < indiceActual; i++) {
+            empleoAnterior.add(todosLosEmpleos.get(i));
+        }
+    }
+    
 
     public void setExperienciaOcupacion(List<ExperienciaOcupacion> experienciaOcupacion) { this.experienciaOcupacion = experienciaOcupacion; }
 

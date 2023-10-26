@@ -41,3 +41,10 @@ Ingeniero de Software
 Desarrollo de Software
 01/01/2015
 01/01/2020
+TRABAJADOR_INDEPENDIENTE
+10
+2
+20 MESES 2 DIAS
+DISEÑADOR WEB
+20
+10
